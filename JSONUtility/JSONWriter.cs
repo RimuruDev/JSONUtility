@@ -7,21 +7,39 @@ namespace RimuruDev.JSONUtility
     [Serializable]
     public sealed class JSONWriter
     {
-        private string path;
-        private object obj;
-
-        public void Write(string path, object obj) =>
-            File.WriteAllText($"{Application.streamingAssetsPath}/{path}", $"{JsonUtility.ToJson(obj: obj)}");
-
-        public void Write() =>
-           File.WriteAllText($"{Application.streamingAssetsPath}/{path}", $"{JsonUtility.ToJson(obj: obj)}");
-
-        public JSONWriter() { }
-
-        public JSONWriter(string pathToJson, object obj)
+        public static void Write(string jsonFileName, object saveObject, bool isDebugLogMode = false)
         {
-            this.path = pathToJson;
-            this.obj = obj;
+            var fullPath = $"{Application.streamingAssetsPath}/{jsonFileName}.json";
+            var context = JsonUtility.ToJson(saveObject);
+
+            if (isDebugLogMode) DebugLogMode(ref jsonFileName, ref fullPath, ref context, ref saveObject);
+
+            File.WriteAllText(fullPath, context);
+        }
+
+        public static void WriteFullPath(string fullPath, object saveObject)
+        {
+            try
+            {
+                File.WriteAllText(fullPath, JsonUtility.ToJson(saveObject));
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("RimuruDev.JSONUtility.JSONWriter...");
+                Debug.LogException(ex);
+                Debug.LogError($"JSONWriter.Write(string fullPath, object saveObject)\n" +
+                               $"FullPath: ]{fullPath}], SaveObject: [{saveObject}]");
+               throw;
+            }
+        }
+
+        private static void DebugLogMode(ref string jsonFileName, ref string fullPath, ref string context, ref object saveObject)
+        {
+            Debug.Log($"JSON file name: [{jsonFileName}]");
+            Debug.Log($"Full path: [{fullPath}]");
+            Debug.Log($"Defaul path: [{Application.streamingAssetsPath}]");
+            Debug.Log($"Context: [{context}]");
+            Debug.Log($"Object for save to .json: [{saveObject}]");
         }
     }
 }
