@@ -1,32 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace RimuruDev.JSONUtility
 {
-    [System.Serializable]
+    [Serializable]
     public sealed class JSONReader<T>
     {
-        private string path;
-
-        public T Read(string pathToJSONData)
+        public static T Read(string jsonFileName, bool isDefaultPath = true)
         {
-            using WWW data = new WWW($"{Application.streamingAssetsPath}/{pathToJSONData}");
+            try
+            {
+                WWW data = null;
 
-            var tmpPlayer = JsonUtility.FromJson<T>(data.text);
+                if (isDefaultPath)
+                    data = new WWW($"{Application.streamingAssetsPath}/{jsonFileName}.json");
+                else
+                    data = new WWW(jsonFileName);
 
-            return tmpPlayer;
+                return JsonUtility.FromJson<T>(data.text);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("RimuruDev.JSONUtility.JSONReader<T>...");
+                Debug.LogException(ex);
+                Debug.LogError($"JSONReader<{typeof(T)}>.{typeof(T)} Read(string {jsonFileName}");
+                throw;
+            }
         }
-
-        public T Read()
-        {
-            using WWW data = new WWW($"{Application.streamingAssetsPath}/{path}");
-
-            var tmpPlayer = JsonUtility.FromJson<T>(data.text);
-
-            return tmpPlayer;
-        }
-
-        public JSONReader() { }
-
-        public JSONReader(string path) => this.path = path;
     }
 }
