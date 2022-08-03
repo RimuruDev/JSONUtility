@@ -6,6 +6,7 @@ namespace RimuruDev.JSONUtility
     [Serializable]
     public sealed class JSONReader<T>
     {
+        [Obsolete]
         public static T Read(string jsonFileName, bool isDefaultPath = true)
         {
             try
