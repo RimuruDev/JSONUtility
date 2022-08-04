@@ -1,4 +1,13 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "Main",
+      "url": "https://github.com/RimuruDev/JSONUtility.git",
+      "scopes": [
+        "com.RimuruDev.JSONUtility"
+      ]
+    }
+  ],
   "name": "com.RimuruDev.JSONUtility",
   "displayName": "RimuruDev",
   "description": "This is a JSON Utility for quickly and easily saving and loading components in JSON format.",
