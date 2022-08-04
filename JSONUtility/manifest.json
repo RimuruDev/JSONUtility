@@ -1,0 +1,23 @@
+{
+  "name": "com.RimuruDev.JSONUtility",
+  "displayName": "RimuruDev",
+  "description": "This is a JSON Utility for quickly and easily saving and loading components in JSON format.",
+  //"unity": "2021.3.5f1",
+  "version": "1.0.0",
+  "keywords": [
+    "rimurudev",
+    "RimuruDev",
+    "json",
+    "unity",
+    "utility"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RimuruDev/JSONUtility.git"
+  },
+  "author": {
+    "name": "RimuruDev",
+    "email": "rimuru.dev@gmail.com"
+  }
+}
