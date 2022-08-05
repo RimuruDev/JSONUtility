@@ -54,12 +54,43 @@ public class Exemple : MonoBehaviour
         JSONWriter.Write("UserData", user);
     }
 
-    private void LoadData()
+    private void LoadFromJSON()
     {
         var readedData = JSONReader<User>.Read("UserData");
 
         user.id = readedData.id;
         user.name = readedData.name;
+    }
+}
+```
+# Full Example
+```csharp
+public class Exemple : MonoBehaviour
+{
+    public User user;
+
+    private void SaveToJSON()
+    {
+        JSONWriter.Write("UserData", user);
+    }
+
+    [Obsolete]
+    private void LoadFromJSON()
+    {
+        var readedData = JSONReader<User>.Read("UserData");
+
+        user.id = readedData.id;
+        user.name = readedData.name;
+    }
+
+    [Obsolete]
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+            SaveToJSON();
+
+        if (Input.GetKeyDown(KeyCode.L))
+            LoadFromJSON();
     }
 }
 ```
