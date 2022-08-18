@@ -1,3 +1,20 @@
 {
- 
-} 
+  "name": "com.rimurudev.jsonutilityn",
+  "author": "RimuruDev",
+  "displayName": "RimuruDev: JSON Utility",
+  "description": "RimuruDev: JSON Utility - Это утилита JSON для быстрого и простого сохранения и загрузки компонентов в формате JSON.",
+  "unity": "2020.3.35f1",
+  "version": "2020.3.35f1",
+  "keywords": [
+    "rimurudev",
+    "rimuru-dev",
+    "json",
+    "unity",
+    "utility"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RimuruDev/JSONUtility.git"
+  }
+}
