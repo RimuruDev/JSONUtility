@@ -12,7 +12,7 @@
 /[Tt]rash
 /Logs/
 
-#new
+#Unity+VS
 */Library/
 */[Ll]ibrary/
 */[Tt]emp/
@@ -50,7 +50,6 @@ crashlytics-build.properties
 
 *.vsconfig
 .vsconfig
-#end new
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
