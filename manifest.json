@@ -1,8 +1,8 @@
 {
-  "name": "com.rimurudev.jsonutilityn",
+  "name": "com.rimurudev.jsonutility",
   "author": "RimuruDev",
   "displayName": "RimuruDev: JSON Utility",
-  "description": "RimuruDev: JSON Utility - Это утилита JSON для быстрого и простого сохранения и загрузки компонентов в формате JSON.",
+  "description": "RimuruDev: JSON Utility - ГќГІГ® ГіГІГЁГ«ГЁГІГ  JSON Г¤Г«Гї ГЎГ»Г±ГІГ°Г®ГЈГ® ГЁ ГЇГ°Г®Г±ГІГ®ГЈГ® Г±Г®ГµГ°Г Г­ГҐГ­ГЁГї ГЁ Г§Г ГЈГ°ГіГ§ГЄГЁ ГЄГ®Г¬ГЇГ®Г­ГҐГ­ГІГ®Гў Гў ГґГ®Г°Г¬Г ГІГҐ JSON.",
   "unity": "2020.3.35f1",
   "version": "2020.3.35f1",
   "keywords": [

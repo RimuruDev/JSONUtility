@@ -1,18 +1,18 @@
 #### [[На русском языки](/README_ru.md) - [In Russian](/README_ru.md)] | [[На английском языки](/README.md) - [In English](/README.md)]
 
-# [RimuruDev](https://www.youtube.com/channel/UCcE4Ho3vmXj_vrg5rI7bpAA) JSON Utility for unity
+# [RimuruDev](https://www.youtube.com/channel/UCcE4Ho3vmXj_vrg5rI7bpAA) JSON утилита для Unity
 
-# How to start
-Download the latest release of this utility. Unpack the .dll and .json and transfer them to the unity, to the Plugin folder.
+# Как начать
+Загрузите последнюю версию этой утилиты.  Распакуйте .dll и .json и перенесите их в юнити, в папку Plagins.
 
-## Don't forget NameSpace 
+## Не забывайте namespace
 
 ```csharp
 using RimuruDev.JSONUtility;
 ```
 
-# Save to JSON
-Component to save to .json
+# Сохранение в JSON
+Компонент для сохранения в .json
 ```csharp
 [System.Serializable]
 public class User
@@ -21,7 +21,7 @@ public class User
     public string name;
 }
 ```
-Component Saving Example
+Пример сохранения компонента
 ```csharp
 public class Exemple : MonoBehaviour
 {
@@ -33,19 +33,19 @@ public class Exemple : MonoBehaviour
     }
 }
 ```
-UserData - This is the name of a .json type file
-user - This is the data that we serialize in .json
+UserData — это имя файла типа .json.
+user — это данные, которые мы сериализуем в .json
 ```csharp
 JSONWriter.Write("UserData", user);
 ```
 
-# Reading to JSON
-JSONReader - Reading .json file
-UserData - This is the name of a .json type file
+# Чтение из JSON
+JSONReader - Чтение .json файла
+UserData - Это имя файла типа .json
 ```csharp
 JSONReader<User>.Read("UserData");
 ```
-Component Reading Example
+Пример чтения компонента
 ```csharp
 public class Exemple : MonoBehaviour
 {
@@ -65,7 +65,7 @@ public class Exemple : MonoBehaviour
     }
 }
 ```
-# Full Example
+# Полный пример
 ```csharp
 public class Exemple : MonoBehaviour
 {
